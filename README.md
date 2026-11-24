@@ -1,214 +1,287 @@
-* ------------------------------
-   TANYA GUPTA â€” PORTFOLIO STYLES
-   ------------------------------ */
-:root {
-  --bg: #09080f;
-  --surface: #11101a;
-  --surface-light: #171523;
-  --text: #f5f2ff;
-  --muted: #a6a1b5;
-  --purple: #a78bfa;
-  --violet: #7c3aed;
-  --border: rgba(255,255,255,.10);
-  --font-body: "DM Sans", sans-serif;
-  --font-heading: "Space Grotesk", sans-serif;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.7; overflow-x: hidden; }
-a { color: inherit; text-decoration: none; }
-button { font: inherit; }
-.container { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
-.page-glow { position: fixed; width: 420px; height: 420px; border-radius: 50%; filter: blur(130px); opacity: .13; pointer-events: none; z-index: -1; }
-.glow-one { top: 5%; left: -220px; background: #7c3aed; }
-.glow-two { top: 55%; right: -250px; background: #4c1d95; }
-.section { padding: 112px 0; position: relative; }
-.section-border { border-top: 1px solid var(--border); }
-.site-header { position: fixed; inset: 0 0 auto; z-index: 100; background: rgba(9,8,15,.82); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255,255,255,.06); }
-.navbar { min-height: 78px; display: flex; align-items: center; justify-content: space-between; }
-.brand { display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-heading); font-weight: 700; font-size: 1.2rem; letter-spacing: -.6px; }
-.brand-mark { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 9px; color: white; background: linear-gradient(135deg, #a78bfa, #6d28d9); font-size: .95rem; }
-.brand-dot { color: var(--purple); margin-left: -9px; }
-.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-.nav-link { color: var(--muted); font-size: .88rem; transition: color .25s ease; }
-.nav-link:hover, .nav-link.active { color: white; }
-.nav-contact { color: white; border: 1px solid rgba(167,139,250,.45); padding: 9px 15px; border-radius: 8px; }
-.nav-contact span { color: var(--purple); margin-left: 5px; }
-.menu-toggle { display: none; background: transparent; border: 0; cursor: pointer; }
-.menu-toggle span { display: block; width: 24px; height: 2px; background: white; margin: 5px; transition: .25s; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanya Gupta - Resume</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #222;
+            line-height: 1.5;
+            padding: 20px;
+        }
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 4px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            border-bottom: 2px solid #e1e8f0;
+            padding-bottom: 20px;
+        }
+        .header-text {
+            flex: 1;
+            text-align: center;
+            padding-right: 20px;
+        }
+        .header-text h1 {
+            font-size: 28px;
+            color: #16325c;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .header-text .subtitle {
+            font-size: 13px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 6px;
+        }
+        .header-text .contact-info {
+            font-size: 13px;
+            color: #444;
+        }
+        .header-text .contact-info a {
+            color: #16325c;
+            text-decoration: none;
+        }
+        .header-text .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .profile-photo {
+            width: 110px;
+            height: 130px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #eee;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            background-color: #e9eff7;
+            color: #16325c;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border: 1px solid #d0dceb;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .section-content {
+            border: 1px solid #d0dceb;
+            border-top: none;
+            padding: 12px 16px;
+            font-size: 13.5px;
+        }
+        .section-content p {
+            margin-bottom: 6px;
+        }
+        .section-content p:last-child {
+            margin-bottom: 0;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+        .job-header {
+            font-weight: 700;
+            color: #16325c;
+            margin-bottom: 8px;
+        }
+        .job-header span {
+            font-weight: 400;
+            color: #444;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+        }
+        th, td {
+            border: 1px solid #d0dceb;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f3f7fc;
+            color: #16325c;
+            font-weight: 700;
+        }
+        @media (max-width: 600px) {
+            .resume-container {
+                padding: 20px;
+            }
+            .header {
+                flex-direction: column-reverse;
+                gap: 15px;
+            }
+            .header-text {
+                padding-right: 0;
+            }
+            table, th, td {
+                font-size: 12px;
+                padding: 6px;
+            }
+        }
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
 
-.hero { min-height: 760px; padding-top: 175px; padding-bottom: 100px; display: flex; align-items: center; }
-.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 70px; align-items: center; }
-.eyebrow { color: var(--purple); font-size: .72rem; letter-spacing: 2.2px; font-weight: 700; margin-bottom: 22px; }
-.eyebrow-line { display: inline-block; width: 27px; height: 1px; background: var(--purple); vertical-align: middle; margin-right: 8px; }
-h1, h2, h3 { font-family: var(--font-heading); line-height: 1.15; letter-spacing: -1.3px; }
-h1 { font-size: clamp(3.2rem, 6vw, 5.4rem); font-weight: 700; }
-.gradient-text { background: linear-gradient(100deg, #c4b5fd 5%, #a78bfa 45%, #8b5cf6 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.hero-description { color: var(--muted); max-width: 540px; font-size: 1.05rem; margin: 26px 0 32px; }
-.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-.button { display: inline-flex; align-items: center; justify-content: center; gap: 14px; border-radius: 8px; padding: 13px 20px; font-weight: 700; font-size: .9rem; transition: transform .25s, box-shadow .25s, background .25s; }
-.button:hover { transform: translateY(-3px); }
-.button-primary { background: linear-gradient(110deg, #8b5cf6, #6d28d9); color: white; box-shadow: 0 10px 30px rgba(109,40,217,.25); }
-.button-primary:hover { box-shadow: 0 14px 36px rgba(139,92,246,.4); }
-.button-ghost { border: 1px solid var(--border); color: var(--text); }
-.button-ghost:hover { background: rgba(255,255,255,.06); }
-.hero-meta { display: flex; align-items: center; gap: 15px; color: var(--muted); font-size: .78rem; margin-top: 48px; }
-.status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #8bdbad; margin-right: 7px; box-shadow: 0 0 12px #8bdbad; }
-.meta-divider { height: 15px; width: 1px; background: var(--border); }
-.hero-visual { min-height: 440px; position: relative; display: grid; place-items: center; }
-.profile-card { width: min(340px, 90%); height: 405px; position: relative; z-index: 2; padding: 19px; border: 1px solid rgba(196,181,253,.3); border-radius: 20px; background: linear-gradient(145deg, rgba(35,27,55,.96), rgba(16,14,25,.98)); box-shadow: 0 30px 90px rgba(0,0,0,.4); transform: rotate(3deg); }
-.profile-top, .profile-bottom { display: flex; justify-content: space-between; color: #b8accf; font-size: .61rem; letter-spacing: 1.4px; font-weight: 700; }
-.profile-star { color: var(--purple); font-size: 1.1rem; }
-.avatar-placeholder { height: 305px; margin: 18px 0; border-radius: 13px; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; background: radial-gradient(circle at 50% 35%, rgba(167,139,250,.32), transparent 42%), linear-gradient(145deg, #28203d, #15111f 70%); border: 1px solid rgba(255,255,255,.08); }
-.avatar-small { color: #c4b5fd; letter-spacing: 3px; font-size: .65rem; }
-.avatar-initials { font-family: var(--font-heading); font-size: 7rem; font-weight: 700; line-height: 1.1; color: transparent; -webkit-text-stroke: 1px rgba(221,214,254,.8); text-shadow: 0 0 45px rgba(167,139,250,.3); }
-.avatar-caption { color: white; font-family: var(--font-heading); font-size: 1.1rem; }
-.orbit { position: absolute; border: 1px solid rgba(167,139,250,.23); border-radius: 50%; transform: rotate(-25deg); }
-.orbit-one { width: 430px; height: 250px; }
-.orbit-two { width: 490px; height: 315px; transform: rotate(40deg); }
-.floating-tag { position: absolute; z-index: 3; background: #1b1728; border: 1px solid rgba(196,181,253,.25); padding: 10px 14px; border-radius: 9px; color: #e9ddff; font-size: .75rem; box-shadow: 0 12px 30px rgba(0,0,0,.25); }
-.tag-top { top: 65px; right: -12px; }
-.tag-bottom { bottom: 65px; left: -10px; }
-.tag-icon { color: var(--purple); margin-right: 7px; }
-.scroll-cue { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; color: #716b80; font-size: .6rem; letter-spacing: 2px; }
-.scroll-cue span { height: 28px; width: 16px; border: 1px solid #716b80; border-radius: 10px; position: relative; }
-.scroll-cue span::after { content: ""; position: absolute; top: 5px; left: 6px; width: 2px; height: 5px; border-radius: 3px; background: var(--purple); }
+    <div class="resume-container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-text">
+                <h1>TANYA GUPTA</h1>
+                <div class="subtitle">BBA – DIGITAL MARKETING | E-COMMERCE, MARKETING &amp; BUSINESS OPERATIONS</div>
+                <div class="contact-info">
+                    Email: <a href="mailto:2024bbatanya18418@poornima.edu.in">2024bbatanya18418@poornima.edu.in</a> | Phone: <a href="tel:7355301632">7355301632</a><br>
+                    LinkedIn: <a href="https://linkedin.com/in/tanya-gupta-39a59b329" target="_blank">linkedin.com/in/tanya-gupta-39a59b329</a> | Jaipur, Rajasthan
+                </div>
+            </div>
+            <!-- Replace 'profile.jpg' with your actual image file path -->
+            <img src="profile.jpg" alt="Tanya Gupta" class="profile-photo">
+        </header>
 
-.section-heading { margin-bottom: 52px; }
-.section-heading h2, .contact-container h2 { font-size: clamp(2.35rem, 4.5vw, 3.8rem); }
-.section-intro { color: var(--muted); margin-top: 17px; max-width: 560px; }
-.about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 90px; align-items: center; }
-.about-text p { color: var(--muted); margin-bottom: 20px; }
-.about-text .large-copy { color: #e8e3f2; font-family: var(--font-heading); font-size: 1.35rem; line-height: 1.55; }
-.text-link { display: inline-flex; gap: 12px; align-items: center; color: var(--purple); font-weight: 700; margin-top: 8px; }
-.text-link span { transition: transform .2s; }
-.text-link:hover span { transform: translate(3px,-3px); }
-.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.stat-card { background: linear-gradient(145deg, #171423, #100f18); border: 1px solid var(--border); border-radius: 13px; padding: 24px; min-height: 125px; }
-.stat-number { display: block; color: #d5c6ff; font-family: var(--font-heading); font-size: 2rem; font-weight: 700; }
-.stat-label { display: block; color: var(--muted); font-size: .77rem; margin-top: 4px; }
-.stat-wide { grid-column: 1 / -1; min-height: 100px; }
-.stat-wide .stat-number { font-size: 1.25rem; }
+        <!-- Career Objective -->
+        <section class="section">
+            <div class="section-title">Career Objective</div>
+            <div class="section-content">
+                <p>BBA Digital Marketing student interested in e-commerce, digital marketing and brand building. Familiar with social media marketing, basic data handling, communication and coordination. Brings practical experience in maintaining records and professional follow-ups through an HR Recruiter internship. Eager to learn marketplace operations, product cataloguing, campaign support and business performance analysis.</p>
+            </div>
+        </section>
 
-.education-list { border-top: 1px solid var(--border); }
-.education-item { display: grid; grid-template-columns: 240px 1fr; gap: 35px; padding: 30px 0; border-bottom: 1px solid var(--border); }
-.education-year { color: var(--purple); font-size: .85rem; font-weight: 700; position: relative; }
-.timeline-dot { display: inline-block; width: 7px; height: 7px; background: var(--purple); border-radius: 50%; margin-left: 12px; vertical-align: middle; box-shadow: 0 0 12px var(--purple); }
-.mini-label { color: #9d8ac7; font-size: .65rem; font-weight: 700; letter-spacing: 1.7px; }
-.education-content h3 { font-size: 1.35rem; margin: 7px 0; letter-spacing: -.5px; }
-.education-content p { color: var(--muted); font-size: .9rem; }
-.result-chip, .date-pill { display: inline-block; margin-top: 13px; padding: 5px 10px; border-radius: 5px; color: #d9ccff; background: rgba(139,92,246,.12); border: 1px solid rgba(167,139,250,.2); font-size: .72rem; }
+        <!-- Key Skills -->
+        <section class="section">
+            <div class="section-title">Key Skills</div>
+            <div class="section-content">
+                <ul>
+                    <li>Digital marketing and social media marketing fundamentals</li>
+                    <li>Interest in e-commerce platforms, online marketplaces and product listings</li>
+                    <li>Basic MS Excel / Google Sheets, data entry and record management</li>
+                    <li>Communication, teamwork, coordination and professional follow-up</li>
+                    <li>Research, attention to detail, time management and willingness to learn</li>
+                    <li>Customer-focused approach and sales/service awareness</li>
+                </ul>
+            </div>
+        </section>
 
-.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.skill-card { background: linear-gradient(145deg, rgba(25,22,37,.9), rgba(15,14,22,.9)); border: 1px solid var(--border); border-radius: 13px; padding: 25px; transition: transform .25s, border-color .25s; }
-.skill-card:hover, .project-card:hover, .certificate-card:hover { transform: translateY(-5px); border-color: rgba(167,139,250,.45); }
-.skill-icon { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 10px; background: rgba(139,92,246,.15); color: #c4b5fd; font-size: 1.2rem; margin-bottom: 20px; }
-.skill-card h3 { font-size: 1.08rem; letter-spacing: -.3px; }
-.skill-card p { color: var(--muted); font-size: .83rem; min-height: 54px; margin: 10px 0 20px; }
-.skill-line { height: 3px; border-radius: 5px; background: #292536; overflow: hidden; }
-.skill-line span { display: block; height: 100%; border-radius: 5px; background: linear-gradient(90deg, #6d28d9, #c4b5fd); }
-.skill-note, .project-note, .certificate-note { color: #777184; font-size: .73rem; margin-top: 18px; }
+        <!-- Internship Experience -->
+        <section class="section">
+            <div class="section-title">Internship Experience</div>
+            <div class="section-content">
+                <div class="job-header">
+                    HR Recruiter Intern | ShreenathjiNaukri.org <span>(Remote | 1 May – 31 July 2026)</span>
+                </div>
+                <ul>
+                    <li>Sourced candidate profiles, screened resumes and shortlisted applicants according to role requirements.</li>
+                    <li>Communicated with candidates, coordinated interview updates and completed follow-ups.</li>
+                    <li>Maintained candidate information and recruitment records with attention to detail.</li>
+                    <li>Built transferable skills in communication, coordination, documentation and task management.</li>
+                </ul>
+            </div>
+        </section>
 
-.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.project-card { overflow: hidden; background: #12111a; border: 1px solid var(--border); border-radius: 14px; transition: transform .25s, border-color .25s; }
-.project-art { height: 210px; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.project-number { position: absolute; top: 15px; left: 17px; z-index: 2; font-size: .68rem; letter-spacing: 1px; color: rgba(255,255,255,.7); }
-.art-word { font-family: var(--font-heading); font-weight: 700; font-size: 2.6rem; line-height: .88; letter-spacing: -2px; text-align: center; position: relative; z-index: 1; text-shadow: 0 6px 25px rgba(0,0,0,.2); }
-.food-emoji, .flower-emoji, .drink-emoji { position: absolute; font-size: 5rem; opacity: .8; filter: drop-shadow(0 10px 15px rgba(0,0,0,.25)); }
-.food-emoji { right: 24px; bottom: 8px; transform: rotate(-15deg); }
-.flower-emoji { right: 25px; top: 17px; color: #fff; font-size: 7rem; }
-.drink-emoji { right: 25px; bottom: 5px; transform: rotate(10deg); }
-.art-orbit { position: absolute; width: 260px; height: 150px; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; transform: rotate(-25deg); }
-.project-burger .project-art { background: linear-gradient(135deg, #7b351c, #d17a36); }
-.project-glow .project-art { background: linear-gradient(135deg, #286a52, #a4b878); }
-.project-slurp .project-art { background: linear-gradient(135deg, #6a238f, #e34d88); }
-.project-info { padding: 23px; }
-.project-type { color: var(--purple); font-size: .62rem; letter-spacing: 1.5px; font-weight: 700; }
-.project-info h3 { font-size: 1.35rem; margin: 7px 0 9px; }
-.project-info p { color: var(--muted); font-size: .82rem; min-height: 78px; }
-.tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 17px; }
-.tag-list span { color: #c9c2d8; background: #211d2c; border-radius: 5px; padding: 4px 8px; font-size: .65rem; }
+        <!-- Educational Qualifications -->
+        <section class="section">
+            <div class="section-title">Educational Qualifications</div>
+            <div class="section-content" style="padding: 0; border: none;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>QUALIFICATION</th>
+                            <th>INSTITUTE</th>
+                            <th>RESULT</th>
+                            <th>YEAR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BBA – Digital Marketing</td>
+                            <td>Poornima University</td>
+                            <td>CGPA: 8.83</td>
+                            <td>2024–2027</td>
+                        </tr>
+                        <tr>
+                            <td>Class 12th</td>
+                            <td>Asha Public School</td>
+                            <td>74.2% (CBSE)</td>
+                            <td>2024</td>
+                        </tr>
+                        <tr>
+                            <td>Class 10th</td>
+                            <td>Kapil Muni Children's Academy</td>
+                            <td>62.2% (CBSE)</td>
+                            <td>2022</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-.internship-card { display: grid; grid-template-columns: 70px 1fr; gap: 24px; padding: 35px; border: 1px solid rgba(167,139,250,.25); border-radius: 15px; background: linear-gradient(120deg, rgba(40,29,65,.55), rgba(17,16,26,.85)); }
-.internship-icon { width: 55px; height: 55px; display: grid; place-items: center; border-radius: 14px; background: rgba(139,92,246,.2); color: #d4c5ff; font-size: 1.5rem; }
-.internship-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
-.date-pill { margin: 0; }
-.internship-main h3 { font-size: 1.65rem; margin: 12px 0 4px; }
-.company-name { color: #c4b5fd !important; font-weight: 600; margin-bottom: 13px !important; }
-.internship-main p { color: var(--muted); font-size: .9rem; }
-.experience-points { color: #c4bfce; padding-left: 19px; margin-top: 16px; font-size: .85rem; }
-.experience-points li { margin: 6px 0; }
+        <!-- Relevant Certifications & Courses -->
+        <section class="section">
+            <div class="section-title">Relevant Certifications &amp; Courses</div>
+            <div class="section-content">
+                <ul>
+                    <li>Digital Marketing Foundations – LinkedIn Learning</li>
+                    <li>Social Media Marketing – HP</li>
+                    <li>Executive Diploma in Sales and Service Management – Udemy</li>
+                    <li>Effective Leadership – HP</li>
+                </ul>
+            </div>
+        </section>
 
-.certificate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
-.certificate-card { display: flex; align-items: center; gap: 16px; padding: 19px; border: 1px solid var(--border); background: #13111c; border-radius: 11px; transition: transform .25s, border-color .25s; }
-.certificate-icon { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; border-radius: 10px; background: rgba(139,92,246,.14); color: #c4b5fd; font-size: 1.2rem; }
-.certificate-card h3 { font-size: .95rem; letter-spacing: -.3px; }
-.certificate-card p { color: var(--muted); font-size: .76rem; margin-top: 4px; }
-.certificate-arrow { margin-left: auto; color: var(--purple); }
+        <!-- Activities & Additional Details -->
+        <section class="section">
+            <div class="section-title">Activities &amp; Additional Details</div>
+            <div class="section-content">
+                <ul>
+                    <li>Coordinated academic group presentations and assignments; took responsibility for team tasks.</li>
+                    <li>Assisted with university/hostel cultural activities and participated in group discussions.</li>
+                </ul>
+            </div>
+        </section>
 
-.contact-section { text-align: center; padding: 125px 0 135px; border-top: 1px solid var(--border); background: radial-gradient(ellipse at 50% 100%, rgba(109,40,217,.16), transparent 55%); }
-.contact-container h2 { font-size: clamp(2.7rem, 5vw, 4.4rem); }
-.contact-description { color: var(--muted); max-width: 500px; margin: 22px auto 28px; }
-.contact-button { min-width: 155px; }
-.email-link { display: block; width: fit-content; margin: 20px auto 0; color: #c4b5fd; font-size: .87rem; }
-.email-link:hover { text-decoration: underline; }
-.footer { border-top: 1px solid var(--border); background: #08070d; }
-.footer-inner { display: flex; align-items: center; justify-content: space-between; padding: 27px 0; }
-.footer-inner p, .copyright { color: #777184; font-size: .75rem; }
-.back-top { color: #b9a6ec; font-size: .67rem; letter-spacing: 1.3px; }
-.copyright { border-top: 1px solid rgba(255,255,255,.05); padding: 15px 0 22px; }
+        <!-- Languages -->
+        <section class="section">
+            <div class="section-title">Languages</div>
+            <div class="section-content">
+                <p>Hindi, English, French (Beginner)</p>
+            </div>
+        </section>
+    </div>
 
-/* Scroll reveal animation */
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-@media (max-width: 900px) {
-  .hero-grid { gap: 30px; }
-  .hero-visual { transform: scale(.9); }
-  .about-grid { gap: 40px; }
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
-  .project-card:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: .9fr 1.1fr; }
-  .project-card:last-child .project-art { height: 100%; min-height: 220px; }
-}
-@media (max-width: 680px) {
-  .container { width: min(100% - 36px, 520px); }
-  .section { padding: 78px 0; }
-  .navbar { min-height: 70px; }
-  .menu-toggle { display: block; z-index: 102; }
-  .nav-links { display: none; position: absolute; top: 70px; left: 0; width: 100%; padding: 22px 25px 27px; background: rgba(12,10,19,.98); border-bottom: 1px solid var(--border); flex-direction: column; align-items: flex-start; gap: 18px; }
-  .nav-links.open { display: flex; }
-  .nav-link { font-size: .95rem; }
-  .nav-contact { display: inline-block; }
-  .hero { min-height: auto; padding-top: 130px; padding-bottom: 100px; }
-  .hero-grid { grid-template-columns: 1fr; gap: 35px; }
-  h1 { font-size: clamp(2.8rem, 13vw, 4.3rem); }
-  .hero-description { font-size: .95rem; }
-  .hero-meta { margin-top: 30px; flex-wrap: wrap; }
-  .hero-visual { min-height: 390px; transform: none; }
-  .profile-card { width: 285px; height: 360px; }
-  .avatar-placeholder { height: 260px; }
-  .avatar-initials { font-size: 5.8rem; }
-  .orbit-one { width: 340px; height: 210px; }
-  .orbit-two { width: 365px; height: 250px; }
-  .tag-top { right: 0; top: 45px; }
-  .tag-bottom { left: 0; bottom: 38px; }
-  .scroll-cue { display: none; }
-  .section-heading { margin-bottom: 35px; }
-  .about-grid { grid-template-columns: 1fr; gap: 28px; }
-  .about-text .large-copy { font-size: 1.2rem; }
-  .education-item { grid-template-columns: 1fr; gap: 10px; padding: 24px 0; }
-  .skills-grid, .projects-grid { grid-template-columns: 1fr; }
-  .project-card:last-child { display: block; grid-column: auto; }
-  .project-card:last-child .project-art { min-height: 0; height: 210px; }
-  .project-info p { min-height: auto; }
-  .internship-card { grid-template-columns: 1fr; padding: 24px; gap: 17px; }
-  .certificate-grid { grid-template-columns: 1fr; }
-  .contact-section { padding: 90px 0; }
-  .footer-inner { flex-wrap: wrap; gap: 15px; }
-  .footer-inner p { order: 3; width: 100%; }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
-  .reveal { opacity: 1; transform: none; }
-}
+</body>
+</html>
